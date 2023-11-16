@@ -56,13 +56,13 @@ body {
   font-size: 1.1rem;
 }
 .page-footer {
-  position: absolute;
+  position:static;
   bottom: 0;
   right: 0;
   left: 0;
   background-color: var(--dark-button);
   color: var(--bright-text);
-  height: 70px;
+  height: 60px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
