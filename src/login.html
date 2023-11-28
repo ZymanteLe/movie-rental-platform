@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie rental login</title>
+    <link rel="stylesheet" href="assets/login/login.css" />
+    <link rel="stylesheet" href="assets/general.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-page">
+      <header class="header">Movie rental</header>
+      <form class="signin-form">
+        <label class="input-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="email"
+          id="signin-email"
+          required
+        />
+        <label class="input-label" for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="signin-password"
+          placeholder="password"
+          required
+        />
+        <p class="signin-message" id="signin-message"></p>
+        <button class="signin-button" type="button" id="signin-button">
+          Sign in
+        </button>
+      </form>
+      <div>
+        <form class="register-form" id="register-form">
+          <label class="input-label" for="name">Name</label>
+          <input type="text" name="user-name" placeholder="name" id="userName" />
+          <label class="input-label" for="surname">Surname</label>
+          <input
+            type="text"
+            name="surname"
+            id="surname"
+            placeholder="surname"
+          />
+          <label class="input-label" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            id="register-email"
+          />
+          <label class="input-label" for="email-repeat">Email again</label>
+          <input
+            type="email"
+            name="email-repeat"
+            placeholder="email"
+            id="email-repeat"
+          />
+          <label class="input-label" for="register-password">Password</label>
+          <input
+            type="password"
+            name="register-password"
+            id="register-password"
+            placeholder="password"
+          />
+          <label class="input-label" for="password-repeat"
+            >Password again</label
+          >
+          <input
+            type="password"
+            name="password-repeat"
+            id="password-repeat"
+            placeholder="password"
+          />
+          <p id="register-message" class="register-message"></p>
+          <button class="register-inform-button" type="button" id="register-inform-button">
+            Register
+          </button>
+        </form>
+        <button class="open-form-button" type="button" id="open-form-button">
+          Register
+        </button>
+      </div>
+    </div>
+    <footer class="page-footer">
+      <p>Made by Žymantė Lelešiūtė</p>
+      <p>2023</p>
+    </footer>
+  </body>
+  <script src="/src/script/login.js"></script>
+</html>

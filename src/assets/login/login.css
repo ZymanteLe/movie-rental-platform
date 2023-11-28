@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
-.signin-form,
-.register-form {
+.signin-form, .register-form {
   background-color: var(--bright-text);
   display: flex;
   flex-direction: column;
@@ -12,31 +12,44 @@
   padding: 15px 20px 10px;
   margin-bottom: 20px;
 }
+.register-form{
+  display: none;
+}
 .input-label {
   font-size: 0.6rem;
   margin-bottom: 2px;
   color: var(--dark-text);
 }
-#email,
-#name,
+#signin-email,
+#register-email,
+#userName,
+#signin-password,
+#password-repeat,
 #password,
 #surname,
 #email-repeat,
-#password-repeat {
+#register-password {
   background-color: var(--background);
   border-style: none;
   padding: 5px;
-  margin-bottom: 15px;
   border-radius: 1px;
 }
 .signin-button,
-.register-button {
+.register-inform-button,
+.open-form-button {
   background-color: var(--dark-button);
   color: var(--bright-text);
   border-radius: 20px;
-  padding: 2px;
+  margin-top: 10px;
+  padding: 5px;
   width: 100px;
   cursor: pointer;
   align-self: center;
   justify-self: center;
+}
+.signin-message, .register-message {
+  font-size: 0.6rem;
+  margin-bottom: 5px;
+  color: red;
+
 }

@@ -49,6 +49,7 @@
   border-radius: 20px;
   padding: 4px;
   width: 150px;
+  cursor: pointer;
 }
 .profile-card-button-right {
   margin-left: 40px;

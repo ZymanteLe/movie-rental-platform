@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 80px;
 }
 .available-movies-table {
   background-color: var(--bright-text);
@@ -12,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 .available-movies-table h1 {
   font-size: 1.3rem;
@@ -19,10 +19,10 @@
   margin-bottom: 30px;
 }
 .available-movies-table table {
-  width: 90%;
+  width: 100%;
   border-spacing: 0 15px;
 }
-.available-movies-table table th {
+.available-movies-table table tr th {
   text-align: left;
   padding-left: 15px;
 }

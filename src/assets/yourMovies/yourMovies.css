@@ -19,7 +19,7 @@
   margin-bottom: 30px;
 }
 .your-movies-table table {
-  width: 90%;
+  width: 100%;
   border-spacing: 0 15px;
 }
 .your-movies-table table th {
@@ -60,5 +60,5 @@
   font-size: 0.8rem;
   font-weight: 700;
   padding: 2px 15px;
-  align-self: center;
+
 }

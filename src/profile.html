@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="profile.css" />
-    <link rel="stylesheet" href="/general.css" />
+    <link rel="stylesheet" href="assets/profile/profile.css" />
+    <link rel="stylesheet" href="assets/general.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,9 +18,9 @@
       <header class="header">Movie rental</header>
       <nav class="nav-bar">
         <ul>
-          <li><a href="/home/home.html">Home</a></li>
-          <li><a href="/yourMovies/yourMovies.html">Your movies</a></li>
-          <li><a href="/profile/profile.html">Profile</a></li>
+          <li><a href="/src/home.html">Home</a></li>
+          <li><a href="/src/yourMovies.html">Your movies</a></li>
+          <li><a href="/src/profile.html">Profile</a></li>
         </ul>
       </nav>
       <div class="profile-card">
@@ -29,22 +29,22 @@
           <div class="profile-card-left">
             <img
               class="profile-picture"
-              src="/pictures/default-profile.png"
+              src="assets/img/default-profile.png"
               alt="default profile picture"
             />
           </div>
           <div class="profile-card-right">
             <div class="profile-card-user-info">
-              <p><strong>Name: </strong>John</p>
-              <p><strong>Surname: </strong>Newman</p>
+              <p id="user-name"></p>
+              <p id="user-surname"></p>
 
-              <p><strong>Email: </strong>john.newman@mail.com</p>
+              <p id="user-email"></p>
             </div>
           </div>
         </div>
         <div class="profile-card-buttons">
           <button class="profile-card-button-left">Reset password</button>
-          <button class="profile-card-button-right">Reset email</button>
+          <button class="profile-card-button-right" id="reset-email">Reset email</button>
         </div>
       </div>
     </div>
@@ -53,4 +53,5 @@
       <p>2023</p>
     </footer>
   </body>
+  <script src="./script/profile.js"></script>
 </html>

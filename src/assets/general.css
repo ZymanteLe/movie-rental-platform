@@ -9,10 +9,13 @@
   --bright-text: #fff;
   --background: #d9d9d9;
 }
+
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--background);
   font-family: "Inter", sans-serif, Arial, Helvetica, sans-serif;
-  height: 100vh;
 }
 .header {
   color: var(--bright-text);
@@ -56,15 +59,14 @@ body {
   font-size: 1.1rem;
 }
 .page-footer {
-  position:static;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
   background-color: var(--dark-button);
   color: var(--bright-text);
-  height: 60px;
+  height: 100px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding:30px
+  padding:0px 30px 30px;
 }
