@@ -82,8 +82,8 @@ function renderTable(movies) {
     <td>${element.rentalPrice}</td>
     <td>${
       element.stockCount > 0
-        ? '<img class="instock-picture"src="assets/img/check.png" alt="check"/>'
-        : '<img class="instock-picture" src="assets/img/cross.png" alt="cross"/>'
+        ? '<img class="instock-picture"src="/src/assets/img/check.png" alt="check"/>'
+        : '<img class="instock-picture" src="/src/assets/img/cross.png" alt="cross"/>'
     } </td>
     <td onclick=rentMovie(${index})>Rent</td>
     </tr>

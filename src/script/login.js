@@ -22,7 +22,7 @@ signInButton.addEventListener("click", function () {
     signinMessage.innerHTML = `Your email is not correct.`;
   } else {
     signinMessage.innerHTML = ``;
-    location.assign("home.html");
+    location.assign("/src/home/home.html");
   }
 });
 
@@ -59,7 +59,7 @@ if (!registerFormHiden) {
       registerMessage.innerHTML = `Provided passwords are not the same`;
     } else {
       registerMessage.innerHTML = ``;
-      location.assign("home.html");
+      location.assign("/src/home/home.html");
     }
   });
 }
