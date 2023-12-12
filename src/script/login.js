@@ -1,19 +1,67 @@
-let signInButton = document.getElementById("signin-button");
-let signinMessage = document.getElementById("signin-message");
-let signInEmail = document.getElementById("signin-email");
-let signInPassword = document.getElementById("signin-password");
-let openRegisterFormBtn = document.getElementById("open-form-button");
-let registerForm = document.getElementById("register-form");
-let registerInFormBtn = document.getElementById("register-inform-button");
-let userName = document.getElementById("userName");
-let surname = document.getElementById("surname");
-let registerEmail = document.getElementById("register-email");
-let emailRepeat = document.getElementById("email-repeat");
-let registerPassword = document.getElementById("register-password");
-let passwordRepeat = document.getElementById("password-repeat");
-let registerMessage = document.getElementById("register-message");
+const signInButton = document.getElementById("signin-button");
+const signinMessage = document.getElementById("signin-message");
+const signInEmail = document.getElementById("signin-email");
+const signInPassword = document.getElementById("signin-password");
+const openRegisterFormBtn = document.getElementById("open-form-button");
+const registerForm = document.getElementById("register-form");
+const registerInFormBtn = document.getElementById("register-inform-button");
+const userName = document.getElementById("userName");
+const surname = document.getElementById("surname");
+const registerEmail = document.getElementById("register-email");
+const emailRepeat = document.getElementById("email-repeat");
+const registerPassword = document.getElementById("register-password");
+const passwordRepeat = document.getElementById("password-repeat");
+const registerMessage = document.getElementById("register-message");
 let registerFormHiden = true;
-let mailFormat = /\S+@\S+\.\S+/;
+const mailFormat = /\S+@\S+\.\S+/;
+const registerUsers = JSON.parse(localStorage.getItem("registerUsers")) || [];
+
+class CurrentUser {
+  constructor(name, surname, email, password) {
+    this.setName = function (newName) {
+      this.name = typeof newName === "string" ? newName : "";
+    };
+    this.setSurname = function (newSurname) {
+      this.surname = typeof newSurname === "string" ? newSurname : "";
+    };
+    this.setEmail = function (newEmail) {
+      this.email = typeof newEmail === "string" ? newEmail : "";
+    };
+    this.setPassword = function (newPassword) {
+      this.password = typeof newPassword === "string" ? newPassword : "";
+    };
+    this.getUser = function () {
+      return {
+        name: this.name,
+        surname: this.surname,
+        email: this.email,
+        password: this.password,
+      };
+    };
+    this.setName(name);
+    this.setSurname(surname);
+    this.setEmail(email);
+    this.setPassword(password);
+  }
+}
+
+function checkUser(email, password) {
+  let current = '';
+  registerUsers.map((element) => {
+    element.email === email && element.password === password
+      ? ((current = new CurrentUser(
+          element.name,
+          element.surname,
+          element.email,
+          element.password
+        )),
+        (signinMessage.innerHTML = ``),
+        location.assign("/src/home/home.html"))
+      : (signinMessage.innerHTML = `Your password or email incorrect`);
+  });
+  localStorage.setItem("currentUser", JSON.stringify(current));
+  console.log(currentUser);
+}
 
 signInButton.addEventListener("click", function () {
   if (!signInEmail.value || !signInPassword.value) {
@@ -21,8 +69,7 @@ signInButton.addEventListener("click", function () {
   } else if (!signInEmail.value.match(mailFormat)) {
     signinMessage.innerHTML = `Your email is not correct.`;
   } else {
-    signinMessage.innerHTML = ``;
-    location.assign("/src/home/home.html");
+    checkUser(signInEmail.value, signInPassword.value);
   }
 });
 
@@ -58,8 +105,20 @@ if (!registerFormHiden) {
     } else if (registerPassword.value !== passwordRepeat.value) {
       registerMessage.innerHTML = `Provided passwords are not the same`;
     } else {
-      registerMessage.innerHTML = ``;
+      addUser(
+        userName.value,
+        surname.value,
+        registerEmail.value,
+        registerPassword.value
+      );
       location.assign("/src/home/home.html");
     }
   });
 }
+
+addUser = (name, surname, email, password) => {
+  registerUsers.push({ name, surname, email, password });
+  localStorage.setItem("registerUsers", JSON.stringify(registerUsers));
+  console.log(registerUsers);
+  return { name, surname, email, password };
+};
